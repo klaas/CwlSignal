@@ -157,7 +157,7 @@ extension Signal where T: AnyObject {
 			switch (filterType, value) {
 			case (.some(let ft), let v as NSObjectProtocol) where v.isKind(of: ft): fallthrough
 			case (.none, _): weakTarget?.setValue(value, forKeyPath: keyPath)
-			default: preconditionFailure("kvc setter signal type \(T.self) failed to match property type \(filterType)")
+			default: preconditionFailure("kvc setter signal type \(T.self) failed to match property type \(String(describing: filterType))")
 			}
 		}
 	}
